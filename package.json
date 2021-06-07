@@ -1,0 +1,32 @@
+{
+  "name": "express-clean-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && babel src -d dist",
+    "now-build": "npm run build",
+    "clean": "rimraf dist",
+    "db": "babel-node ./db/index.js",
+    "dev": "nodemon --exec babel-node ./index.js",
+    "start": "npm run clean && npm run build && npm run db && cd dist && node index.js"
+  },
+  "author": "Hazen Gharib",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "babel-jest": "^24.4.0",
+    "babel-plugin-inline-dotenv": "^1.2.2",
+    "crypto": "^1.0.1",
+    "cuid": "^2.1.8",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "ip-regex": "^4.3.0",
+    "mongodb": "^3.6.9",
+    "rimraf": "^3.0.2",
+    "sanitize-html": "^2.4.0"
+  }
+}
